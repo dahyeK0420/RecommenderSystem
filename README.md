@@ -7,9 +7,9 @@ This notebook creates a recommender system for the users on Flickr. The recommen
 Model Candidates and Hypothesis 
 To build the recommender systems, the algorithms trained and compared are as follow: 
 
-*	Matrix Factorisation model (MF) using torch 
-*	Matrix Factorisation model with bias (MFB) using torch 
-*	Alternating Least Squares (ALS) model using implicit
+*	Matrix Factorisation model (MF) using **`torch`**
+*	Matrix Factorisation model with bias (MFB) using **`torch`**
+*	Alternating Least Squares (ALS) model using **`implicit`**
 
 ![alt text](https://github.com/dahyeK0420/RecommenderSystem/blob/3aec14f52824ce2c5b19e7dce78ef9ff4291533c/Picture%201.png)
 
