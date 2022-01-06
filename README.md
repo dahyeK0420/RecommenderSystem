@@ -11,6 +11,8 @@ To build the recommender systems, the algorithms trained and compared are as fol
 *	Matrix Factorisation model with bias (MFB) using torch 
 *	Alternating Least Squares (ALS) model using implicit
 
+![alt text](https://github.com/dahyeK0420/RecommenderSystem/blob/3aec14f52824ce2c5b19e7dce78ef9ff4291533c/Picture%201.png)
+
 All models assumes that the user and items are representable within a low-dimensional space. The matrix factorisation with bias artificially adds training bias in order to trade-off lower variance of the model. ALS model, on the other hand, optimises each parameter in the model one at a time in order to convert the object function of the matrix factorisation model into a least-squares problem. Considering that the train set does not have the rating of all users to all items, and assuming that both items and users are representable in a low-dimensional space, we can assume that ALS should have a better performance than MF or MFB. 
 
 ## Train, Validation, and Test Datasets
@@ -23,4 +25,3 @@ The dataset utilised for training, validating, and testing three algorithms abov
 *	***‘flickr_test_data.csv’***: the dataset with only user IDs and item IDs. The user-item combinations in this dataset are utilised for deriving the top-15 recommended items to each user
 
 The notebook first starts off by inspecting the structure of each dataset. Duplicates detected from both validation and test sets are removed. For the MF and MFB, the user_id, item_id, and rating attributes are all converted into long tensors. Each user_id and item_id is then embedded into a vector length of K, and all users’ IDs and items’ IDs then become user and item matrices respectively. The item matrix has a dimension of K*number of items IDs in the train set, and the user matrix has a dimension of K*number of users’ IDs in the train set. The rating of a user to an item is the product of respective user and item vectors. To enable the multiplication, the user matrix is transposed to the dimension of number of users’ IDs * K. K is one of the hyperparameters to tune for optimising the performance of all three models. For ALS, the train set is converted into a sparse matrix and fitted into an ALS model.
-
